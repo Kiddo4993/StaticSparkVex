@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 20% 95%;
+    --foreground: 25 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 15%;
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 35% 75%;
+    --secondary-foreground: 25 20% 15%;
+    --muted: 30 25% 90%;
+    --muted-foreground: 25 15% 45%;
+    --accent: 0 75% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 80%;
+    --input: 30 20% 85%;
+    --ring: 210 100% 45%;
+    --radius: 0rem;
+    --vex-red: 0 75% 55%;
+    --vex-blue: 210 100% 45%;
+    --vex-brown: 30 35% 65%;
+    --chart-1: 210 100% 45%;
+    --chart-2: 0 75% 55%;
+    --chart-3: 30 35% 65%;
+    --chart-4: 210 80% 35%;
+    --chart-5: 0 65% 45%;
+  }
+
+  .dark {
+    --background: 25 15% 12%;
+    --foreground: 0 0% 95%;
+    --card: 25 12% 16%;
+    --card-foreground: 0 0% 95%;
+    --popover: 25 12% 16%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 25% 25%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 15% 60%;
+    --accent: 0 75% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 210 100% 55%;
+    --vex-red: 0 75% 55%;
+    --vex-blue: 210 100% 55%;
+    --vex-brown: 30 35% 45%;
+    --chart-1: 210 100% 55%;
+    --chart-2: 0 75% 55%;
+    --chart-3: 30 35% 55%;
+    --chart-4: 210 80% 45%;
+    --chart-5: 0 65% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .graffiti-logo {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, hsl(0, 75%, 55%), hsl(210, 100%, 45%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(3px 3px 0px hsl(25, 20%, 15%))
+            drop-shadow(-2px -2px 0px hsl(30, 35%, 65%))
+            drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+    font-style: italic;
+  }
+
+  .graffiti-logo span {
+    text-shadow: 2px 2px 0 hsl(25, 20%, 15%),
+                 -1px -1px 0 hsl(0, 0%, 100%),
+                 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+}
