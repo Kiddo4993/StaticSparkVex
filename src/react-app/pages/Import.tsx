@@ -79,6 +79,8 @@ export default function ImportPage() {
     }
   };
 
+  // Rows come straight from the CSV/XLSX parsers, so their shape isn't known yet.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const parseMatchData = (data: any[]): ParsedMatch[] => {
     const matches: ParsedMatch[] = [];
 
